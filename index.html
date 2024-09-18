@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dance2Music Generation Results</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+  h3 {
+    padding: 10px 20px;
+  }
+  h4 {
+    padding: 10px 20px;
+  }
+  </style>
+<body>
+  <div class="page-intro">
+    <h1>Compare with Other Methods</h1>
+    <h3>All of our results are generated using the prompt "a @ music with * as the rhythm." </h3>
+  </div>
+  <h2 style="text-align: center;">AIST++ Dataset</h2>
+
+  <h3 style="text-align: center;">Group 1</h3>
+<div class="video-container">
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="LORIS">
+    <video src="./samples/loris/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/gLO_sBM_cAll_d13_mLO2_ch02_slice0.mp4" controls></video>
+  </div>
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_AIST_same_style/gLO_sBM_c01_d13_mLO2_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_AIST_same_style_phase/gLO_sBM_c01_d13_mLO2_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">
+    <video src="./samples/riffusion/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(AudioLDM)">
+    <video src="./samples/AudioLDM/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+    </div>
+</div>
+
+<h3 style="text-align: center;">Group 2</h3>
+  <div class="video-container">
+    <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>    
+    <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>
+    <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>    
+    <div class="video-item" data-number="LORIS">
+    <video src="./samples/loris/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>
+    <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/gWA_sBM_cAll_d25_mWA0_ch02_slice0.mp4"controls></video>
+    </div>
+    <div class="video-item"  data-number="Mustango Same Tempo">
+      <video src="./samples/mustango/same_tempo_AIST_same_style/gWA_sBM_c01_d25_mWA0_ch02_1.mp4"controls></video>
+      </div>
+    <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+      <video src="./samples/mustango/same_tempo_AIST_same_style_phase/gWA_sBM_c01_d25_mWA0_ch02_1.mp4"controls></video>
+      </div>
+    <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>
+    <div class="video-item" data-number="Ours(Riffusion)">
+      <video src="./samples/riffusion/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+      </div>
+    <div class="video-item" data-number="Ours(AudioLDM)">
+      <video src="./samples/AudioLDM/gWA_sBM_c01_d25_mWA0_ch02_1.mp4" controls></video>
+    </div>
+  </div>
+
+
+<h3 style="text-align: center;">Group 3</h3>
+<div class="video-container">  
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="LORIS">      
+    <video src="./samples/loris/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/gMH_sBM_cAll_d22_mMH3_ch02_slice0.mp4" controls></video>
+  </div>
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_AIST_same_style/gMH_sBM_c01_d22_mMH3_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_AIST_same_style_phase/gMH_sBM_c01_d22_mMH3_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">
+    <video src="./samples/riffusion/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(AudioLDM)">
+    <video src="./samples/AudioLDM/gMH_sBM_c01_d22_mMH3_ch02_1.mp4" controls></video>
+    </div>
+</div>
+
+<h3 style="text-align: center;">Group 4</h3>
+<div class="video-container">
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="LORIS">
+    <video src="./samples/loris/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/gWA_sBM_cAll_d26_mWA0_ch02_slice0.mp4" controls></video>
+  </div>
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_AIST_same_style/gWA_sBM_c01_d26_mWA0_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_AIST_same_style_phase/gWA_sBM_c01_d26_mWA0_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">
+    <video src="./samples/riffusion/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(AudioLDM)">
+    <video src="./samples/AudioLDM/gWA_sBM_c01_d26_mWA0_ch02_1.mp4" controls></video>
+    </div>
+  </div>
+<h3 style="text-align: center;">Group 5</h3>
+<div class="video-container">
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>      
+  </div>   
+  <div class="video-item" data-number="LORIS">      
+    <video src="./samples/loris/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/gHO_sBM_cAll_d20_mHO5_ch02_slice0.mp4" controls></video> 
+  </div>   
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_AIST_same_style/gHO_sBM_c01_d20_mHO5_ch02_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_AIST_same_style_phase/gHO_sBM_c01_d20_mHO5_ch02_1.mp4"controls></video>
+    </div> 
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">     
+    <video src="./samples/riffusion/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(AudioLDM)">
+    <video src="./samples/AudioLDM/gHO_sBM_c01_d20_mHO5_ch02_1.mp4" controls></video>
+    </div> 
+
+</div>
+
+<h2 style="text-align: center;">InDV Dataset</h2>
+  <h3 style="display: block; text-align: center;">Group 1</h3>
+<div class="video-container">
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="LORIS">
+    <video src="./samples/loris/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_RMD_same_style/Ancient_yellow_2_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_RMD_same_style_phase/Ancient_yellow_2_1.mp4"controls></video>
+    </div>
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">
+    <video src="./samples/riffusion/Ancient_yellow_2_1.mp4" controls></video>
+  </div>
+</div>
+<h3 style="text-align: center;">Group 2</h3>
+<div class="video-container">
+  <div class="video-item" data-number="Ground Truth">
+    <video src="./samples/gt/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CMT">
+    <video src="./samples/CMT/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="CDCD">
+    <video src="./samples/CDCD/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="LORIS">
+    <video src="./samples/loris/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="MDM">
+    <video src="./samples/dmd/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item"  data-number="Mustango Same Tempo">
+    <video src="./samples/mustango/same_tempo_RMD_same_style/K-pop_yellow_19_1.mp4"controls></video>
+    </div>
+  <div class="video-item"  data-number="Mustango Same Tempo and Aligned Phase">
+    <video src="./samples/mustango/same_tempo_RMD_same_style_phase/K-pop_yellow_19_1.mp4"controls></video>
+    </div>
+  <div class="video-item" data-number="Ours(MUSICGEN)">
+    <video src="./samples/musicgen/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours(Riffusion)">
+    <video src="./samples/riffusion/K-pop_yellow_19_1.mp4" controls></video>
+  </div>
+</div>
+<div class="page-intro">
+  <h1>Other results of InDV dataset</h1>
+  <h3>The prompt is fixed as "a @ music with * as the rhythm".</h3>
+</div>
+<div class="video-container">
+  <div class="video-item" data-number="Ballet">
+    <video src="./samples/InDV_dataset_results/Ballet_yellow_19_3.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Latin">
+    <video src="./samples/InDV_dataset_results/Latin_white_1_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Waacking">
+    <video src="./samples/InDV_dataset_results/waacking_yellow_12_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Locking">
+    <video src="./samples/InDV_dataset_results/locking_yellow_17_2.mp4" controls></video>
+  </div>
+</div> 
+
+<h1>Various results for same videos</h1>
+</div>
+<div class="video-container">
+  <div class="video-item" data-number="Original genre: Lock">
+    <video src="./samples/musicgen/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Break">
+    <video src="./samples/genre_various_condition/BR/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="EDM">
+    <video src="./samples/genre_various_condition/EDM/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Jazz">
+    <video src="./samples/genre_various_condition/jazz/gLO_sBM_c01_d13_mLO2_ch02_1.mp4" controls></video>
+  </div>
+</div>
+
+<div class="video-container">
+<div class="video-item" data-number="Original genre: Ballet">
+  <video src="./samples/musicgen/Ballet_white_14_2.mp4" controls></video>
+</div>
+<div class="video-item" data-number="Ancient">
+  <video src="./samples/RMD_various_condition/Ancient/Ballet_white_14_2_wait.mp4" controls></video>
+</div>
+<div class="video-item" data-number="Jazz">
+  <video src="./samples/RMD_various_condition/jazz/Ballet_white_14_2.mp4" controls></video>
+</div>
+<div class="video-item" data-number="POP">
+  <video src="./samples/RMD_various_condition/pop/Ballet_white_14_2_wait.mp4" controls></video>
+</div>
+</div>
+
+<div class="video-container">
+  <div class="video-item" data-number="Original genre: Latin">
+    <video src="./samples/InDV_dataset_results/Latin_white_1_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ballet">
+    <video src="./samples/RMD_various_condition/Ballet/Latin_white_1_1_wait.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="EDM">
+    <video src="./samples/RMD_various_condition/EDM/Latin_white_1_1.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Rock">
+    <video src="./samples/RMD_various_condition/Rock/Latin_white_1_1.mp4" controls></video>
+  </div>
+  </div>
+
+<div class="video-container">
+  <div class="video-item" data-number="Original genre: Ancient">
+    <video src="./samples/musicgen/Ancient_yellow_1_3.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ballet">
+    <video src="./samples/RMD_various_condition/Ballet/Ancient_yellow_1_3_wait.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="EDM">
+    <video src="./samples/RMD_various_condition/EDM/Ancient_yellow_1_3.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Rock">
+    <video src="./samples/RMD_various_condition/Rock/Ancient_yellow_1_3.mp4" controls></video>
+  </div>
+  </div>
+
+
+
+  <div class="page-intro">
+    <h1>Videos with Changes in Tempo</h1>
+    <h3>To facilitate the observation of changes in video tempo, we provide original videos. Additionally, we add progress bars to the videos with tempo changes and include visual markers for dance moves on the progress bars to help observe the changes in action intervals.</h3>
+  </div>
+  <h2 style="text-align: center;">Results  of  edit videos</h2>
+
+  <div class="video-container">
+  <div class="video-item" data-number="Original video">
+    <video src="./samples/change_speed/original_videos/gWA26.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/wa25.mp4" controls></video>
+  </div>
+</div>
+
+<div class="video-container">
+  <div class="video-item" data-number="Original video">
+    <video src="./samples/change_speed/original_videos/gPO11.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/PO11.mp4" controls></video>
+  </div>
+</div>
+
+<div class="video-container">
+  <div class="video-item" data-number="Original video">
+    <video src="./samples/change_speed/original_videos/gHO20.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/HO20.mp4" controls></video>
+  </div>
+</div>
+
+<div class="video-container">
+  <div class="video-item" data-number="Original video">
+    <video src="./samples/change_speed/original_videos/hiphop3.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/hiphop3.mp4" controls></video>
+  </div>
+</div>
+
+<h2 style="text-align: center;">Results of original videos with changes in tempo</h2>
+<div class="video-container">
+  <div class="video-item" data-number="Silent video">
+    <video src="./samples/change_speed/slient videos/sport3_1_silent.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/gym.mp4" controls></video>
+  </div>
+</div>
+<div class="video-container">
+  <div class="video-item" data-number="Silent video">
+    <video src="./samples/change_speed/slient videos/kpop.mp4" controls></video>
+  </div>
+  <div class="video-item" data-number="Ours">
+    <video src="./samples/change_speed/progress_bar/kpop.mp4" controls></video>
+  </div>
+</div>
+<div class="page-intro">
+  <h1>The Results of In-the-Wild Data with Models Trained on AIST++</h1>
+</div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>Laid-back and joyful music featuring saxophone and piano ensemble, with * as the rhythm
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/lalaland_1_1.mp4" controls></video>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>a high-quality comical music with * as the rhythm, lively and joyful
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/pulp_fiction_1_1.mp4" controls></video>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>lively and playful music with a catchy beat and whimsical melodies, with * as the rhythm
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/robot2_1.mp4" controls></video>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>lively melodies with * as the rhythm and pleasant instrumental arrangements, conveying a joyful, lively, and vibrant atmosphere that makes people irresistibly dance along with the beat
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/cartoon_green_3_2_1.mp4" controls></video>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>joyful and laid-back music with * as the rhythm, blending rich orchestration
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/7-4_1_1.mp4" controls></video>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>energetic and lively pop melody with * as the rhythm
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/boy1_1_2.mp4" controls></video>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>pop music with * as the rhythm, strong beats, impactful melodies, and an energetic rhythm
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/girl3_1_2.mp4" controls></video>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>cuba music with * as the rhythm
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/ropejump_girl.mp4" controls></video>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <div class="text-item" data-number="">
+      <p>high-quality energetic and upbeat music, with * as the rhythm, encouraging players to move dynamically
+      </p>
+     </div>  
+    <div class="video-item" data-number="">
+      <video src="./samples/in-the-wild/basketball_2_1.mp4" controls></video>
+    </div>
+  </div>
+</body>
+</html>
+<div class="page-intro">
+  
